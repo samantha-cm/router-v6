@@ -8,6 +8,9 @@
 //Seccion de importaciones
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
+import Characters from "./pages/Characters";
+import data from "./rickAndyMorty.json";
+import Character from "./pages/Character";
 
 //Dummie components
 
@@ -25,9 +28,15 @@ const Router = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/preguntas" element={<Preguntas />} />
+            <Route index element={<Home />} />
+            <Route
+              path="/characters"
+              element={<Characters allCharacters={data} />}
+            >
+              <Route path=":id" element={<Character allCharacters={data} />} />
+            </Route>
             <Route path="*" element={<h1>404</h1>} />
           </Route>
         </Routes>

@@ -5,7 +5,7 @@ const Layout = () => {
     <>
       <nav className="navbar navbar-dark bg-dark">
         <div className="container-fluid">
-          <Link className="nav-link" to="/home">
+          <Link className="nav-link" to="/">
             Home
           </Link>
           <Link className="nav-link" to="/about">
@@ -13,6 +13,9 @@ const Layout = () => {
           </Link>
           <Link className="nav-link" to="/preguntas">
             Preguntas
+          </Link>
+          <Link className="nav-link" to="/characters">
+            Characters
           </Link>
         </div>
       </nav>
